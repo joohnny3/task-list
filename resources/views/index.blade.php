@@ -1,11 +1,19 @@
-<div>
-    <h1>
-        The list of tasks
-    </h1>
-</div>
+@extends('layouts.app')
+@section('title', 'The list of tasks')
 
-<div>
-    {{-- @if (count($tasks)) --}}
+@section('styles')
+    <style>
+        svg {
+            display: none;
+        }
+    </style>
+@endsection
+
+@section('content')
+    <div>
+        <a href="{{ route('tasks.create') }}">Add Task!</a>
+    </div>
+
     @forelse ($tasks as $task)
         {{-- {{ route('tasks.show', ['id' => $task->id]) }} --}}
         <div>
@@ -16,8 +24,8 @@
     @endforelse
 
     @if ($tasks->count())
-    <nav>
-        {{ $tasks->links() }}
-    </nav>
+        <nav>
+            {{ $tasks->links() }}
+        </nav>
     @endif
-</div>
+    </div>
