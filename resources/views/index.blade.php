@@ -1,5 +1,7 @@
 <div>
-    Hello Im a blade template!
+    <h1>
+        The list of tasks
+    </h1>
 </div>
 
 <div>
