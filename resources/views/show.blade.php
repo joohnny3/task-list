@@ -3,10 +3,6 @@
 @section('title', $task->title)
 
 @section('content')
-    <div class="mb-4">
-        <a href="{{ route('tasks.index') }}" class="link">← Go back ti the
-            task list!</a>
-    </div>
     <p class="mb-4 text-slate-700">
         {{ $task->description }}
     </p>
@@ -43,5 +39,8 @@
             @method('DELETE')
             <button type="submit" class="btn">刪除</button>
         </form>
+    </div>
+    <div class="mt-4">
+        <a href="{{ route('tasks.index') }}" class="link">← 回上一頁</a>
     </div>
 @endsection

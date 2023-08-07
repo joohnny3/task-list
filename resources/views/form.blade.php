@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', isset($task) ? 'Edit Task' : 'Add Task')
+@section('title', isset($task) ? '編輯清單' : '新增清單')
 
 @section('content')
     <form action="{{ isset($task) ? route('tasks.update', ['task' => $task->id]) : route('tasks.store') }}" method="post">
@@ -9,7 +9,7 @@
             @method('PUT')
         @endisset
         <div class="mb-4">
-            <label for="title">Title</label>
+            <label for="title">主題</label>
             <input type="text" name="title" id="title" @class(['border-red-500' => $errors->has('title')])
                 value="{{ $task->title ?? old('title') }}">
             @error('title')
@@ -19,7 +19,7 @@
             @enderror
         </div>
         <div class="mb-4">
-            <label for="description">Description</label>
+            <label for="description">詳細敘述</label>
             <textarea name="description" id="description" cols="30" rows="5" @class(['border-red-500' => $errors->has('description')])>
                 {{ $task->description ?? old('description') }}
             </textarea>
@@ -30,7 +30,7 @@
             @enderror
         </div>
         <div class="mb-4">
-            <label for="long_description">Long Description</label>
+            <label for="long_description">注意事項</label>
             <textarea name="long_description" id="long_description" cols="30" rows="10" @class(['border-red-500' => $errors->has('long_description')])>
                 {{ $task->long_description ?? old('long_description') }}
             </textarea>
@@ -40,12 +40,12 @@
                 </p>
             @enderror
         </div>
-        <div class="flex items-center gap-2">
+        <div class="flex items-center gap-3">
             <button type="submit" class="btn">
                 @isset($task)
-                    Update Task
+                    更新
                 @else
-                    Add Task
+                    新增
                 @endisset
             </button>
             <a href="{{ route('tasks.index') }}" class="link">取消</a>

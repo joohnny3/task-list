@@ -23,7 +23,7 @@ Route::get('/', function () {
 
 Route::get('/tasks', function () {
     return view('index', [
-        'tasks' => Task::latest()->paginate(10)
+        'tasks' => Task::latest()->paginate()
     ]);
 })->name('tasks.index');
 
@@ -49,7 +49,7 @@ Route::post('/tasks', function (TaskRequest $request) {
     $task = Task::create($request->validated());
 
     return redirect()->route('tasks.show', ['task' => $task->id])
-        ->with('successs', 'Task created successfully!');
+        ->with('successs', '成功新增清單');
 })->name('tasks.store');
 
 Route::put('/tasks/{task}', function (Task $task, TaskRequest $request) {
@@ -57,16 +57,16 @@ Route::put('/tasks/{task}', function (Task $task, TaskRequest $request) {
     $task->update($request->validated());
 
     return redirect()->route('tasks.show', ['task' => $task->id])
-        ->with('successs', 'Task updated successfully!');
+        ->with('successs', '成功更新清單');
 })->name('tasks.update');
 
 Route::delete('/tasks/{task}', function (Task $task) {
     $task->delete();
-    return redirect()->route('tasks.index')->with('success', 'Task deleted succcessfully!');
+    return redirect()->route('tasks.index')->with('success', '成功刪除清單');
 })->name('tasks.destroy');
 
 Route::put('tasks/{task}/toggle-complete', function (Task $task) {
     $task->toggleComplete();
 
-    return redirect()->back()->with('success', 'Task updated successfully!');
+    return redirect()->back()->with('success', '成功更新清單');
 })->name('tasks.toggle-complate');
