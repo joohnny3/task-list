@@ -1,10 +1,12 @@
 @extends('layouts.app')
-@section('title', 'To-Do')
+@section('title', $today)
 
 @section('styles')
 @section('content')
-    <div class="mb-5 text-center text-5xl">
-        <a href="{{ route('tasks.create') }}" class="link"><i class="bi bi-plus-circle-fill text-amber-200"></i></a>
+    <div class="mb-5 text-center text-5xl animate__animated animate__rubberBand">
+        <a href="{{ route('tasks.create') }}" class="link">
+            <i class="bi bi-plus-circle-fill text-teal-500"></i>
+        </a>
     </div>
     @forelse ($tasks as $task)
         <div class="my-3">
@@ -13,7 +15,7 @@
                 'text-xl',
                 'line-through' => $task->completed,
                 'font-medium' => $task->completed,
-                'text-gray-600' => $task->completed
+                'text-gray-600' => $task->completed,
             ])>{{ $task->title }}</a>
         </div>
     @empty

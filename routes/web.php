@@ -2,6 +2,7 @@
 
 use App\Http\Requests\TaskRequest;
 use App\Models\Task;
+use Carbon\Carbon;
 use Illuminate\Http\Response;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -22,8 +23,12 @@ Route::get('/', function () {
 });
 
 Route::get('/tasks', function () {
+
+    $today = Carbon::now()->format('n/d D.');
+
     return view('index', [
-        'tasks' => Task::latest()->paginate(13)
+        'tasks' => Task::latest()->paginate(13),
+        'today' => $today
     ]);
 })->name('tasks.index');
 

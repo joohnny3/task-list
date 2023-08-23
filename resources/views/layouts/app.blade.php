@@ -10,6 +10,8 @@
     <script src="//unpkg.com/alpinejs" defer></script>
     <link rel="icon" href="/image/list.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
     {{-- blade-formatter-disable --}}
     <style type="text/tailwindcss">
     .btn{
@@ -30,22 +32,21 @@
     }
 
     .error{
-      @apply text-red-500 text-sm
+        @apply text-red-500 text-sm
     }
 
     .page-text{
-      display: none;
+        @apply hidden
     }
-    
     </style>
     {{-- blade-formatter-enable --}}
     @yield('styles')
 </head>
 
 <body class="container mx-auto mt-10 mb-10 max-w-lg">
-    {{-- <h1 class="text-2xl mb-4">
+    <h1 class="text-3xl mb-5 justify-center flex animate__animated animate__bounce">
         @yield('title')
-    </h1> --}}
+    </h1>
     <div x-data="{ flash: true }">
         @if (session()->has('success'))
             <div x-show="flash"
