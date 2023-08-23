@@ -11,6 +11,10 @@
     <link rel="icon" href="/image/list.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+
 
     {{-- blade-formatter-disable --}}
     <style type="text/tailwindcss">
@@ -41,10 +45,11 @@
     </style>
     {{-- blade-formatter-enable --}}
     @yield('styles')
+    @yield('index-styles')
 </head>
 
 <body class="container mx-auto mt-10 mb-10 max-w-lg">
-    <h1 class="text-3xl mb-5 justify-center flex animate__animated animate__bounce">
+    <h1 class="text-3xl mb-5 justify-center flex animate__animated animate__bounce title">
         @yield('title')
     </h1>
     <div x-data="{ flash: true }">

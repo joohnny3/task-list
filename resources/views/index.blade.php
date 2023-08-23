@@ -1,6 +1,13 @@
 @extends('layouts.app')
 @section('title', $today)
-
+@section('index-styles')
+    <style>
+        .title {
+            color: rgb(49 46 129);
+            font-family: 'Roboto Condensed', sans-serif;
+        }
+    </style>
+@endsection
 @section('styles')
 @section('content')
     <div class="mb-5 text-center text-5xl animate__animated animate__rubberBand">
