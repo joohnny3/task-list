@@ -19,33 +19,35 @@
             @enderror
         </div>
         <div class="mb-4">
-            <label for="description">詳細敘述</label>
-            <textarea name="description" id="description" cols="30" rows="5" @class(['border-red-500' => $errors->has('description')])>
-                {{ $task->description ?? old('description') }}
-            </textarea>
-            @error('description')
+            <div class="mb-4">
+                <label for="long_description"><i class="bi bi-chat-left-text"></i></label>
+                <textarea name="long_description" id="long_description" cols="30" rows="10" @class(['border-red-500' => $errors->has('long_description')])>
+                    {{ $task->long_description ?? old('long_description') }}
+                </textarea>
+                @error('long_description')
                 <p class="error">
                     {{ $message }}
                 </p>
-            @enderror
-        </div>
-        <div class="mb-4">
-            <label for="long_description">注意事項</label>
-            <textarea name="long_description" id="long_description" cols="30" rows="10" @class(['border-red-500' => $errors->has('long_description')])>
-                {{ $task->long_description ?? old('long_description') }}
-            </textarea>
-            @error('long_description')
-                <p class="error">
-                    {{ $message }}
-                </p>
-            @enderror
+                @enderror
+            </div>
+            <div>
+                <label for="description"><i class="bi bi-exclamation-diamond"></i></label>
+                <textarea name="description" id="description" cols="30" rows="5" @class(['border-red-500' => $errors->has('description')])>
+                    {{ $task->description ?? old('description') }}
+                </textarea>
+                @error('description')
+                    <p class="error">
+                        {{ $message }}
+                    </p>
+                @enderror
+            </div>
         </div>
         <div class="flex items-center gap-3">
             <button type="submit" class="btn">
                 @isset($task)
                     更新
                 @else
-                    新增
+                <i class="bi bi-file-earmark-plus"></i>
                 @endisset
             </button>
             <a href="{{ route('tasks.index') }}" class="link">取消</a>

@@ -1,16 +1,16 @@
 @extends('layouts.app')
-@section('title', '待辦清單')
+@section('title', 'To-Do')
 
 @section('styles')
 @section('content')
-    <div class="mb-2">
-        <a href="{{ route('tasks.create') }}" class="link">新增清單</a>
+    <div class="mb-5 text-center text-5xl">
+        <a href="{{ route('tasks.create') }}" class="link"><i class="bi bi-plus-circle-fill text-amber-200"></i></a>
     </div>
     @forelse ($tasks as $task)
-        <div>
+        <div class="my-3">
             <a href="{{ route('tasks.show', ['task' => $task->id]) }}" @class([
                 'font-bold',
-                'text-lg',
+                'text-xl',
                 'line-through' => $task->completed,
                 'font-medium' => $task->completed,
                 'text-gray-600' => $task->completed
@@ -21,7 +21,7 @@
     @endforelse
 
     @if ($tasks->count())
-        <nav class="mt-4">
+        <nav class="mt-5">
             {{ $tasks->links() }}
         </nav>
     @endif
