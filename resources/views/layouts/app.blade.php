@@ -18,6 +18,9 @@
 
     {{-- blade-formatter-disable --}}
     <style type="text/tailwindcss">
+    body{
+        background-color: #fdfdfd;
+    }
     .btn{
         @apply rounded-md px-2 py-1 text-center font-medium text-slate-700 shadow-sm ring-1 ring-slate-700/10 hover:bg-slate-50
     }
@@ -48,11 +51,11 @@
     @yield('index-styles')
 </head>
 
-<body class="container mx-auto mt-10 mb-10 max-w-lg">
+<body class="container mx-auto my-10 max-w-lg">
     <h1 class="text-3xl mb-5 justify-center flex animate__animated animate__bounce title">
         @yield('title')
     </h1>
-    <div x-data="{ flash: true }">
+    <div x-data="{ flash: true }" class="sm: mx-4">
         @if (session()->has('success'))
             <div x-show="flash"
                 class="relative mb-10 rounded border border-green-400 bg-green-100 px-4 py-3 text-green-700"
