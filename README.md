@@ -6,33 +6,27 @@
 
 ## Installation
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- 基本任務管理：允許使用者添加、修改、刪除事項。
+- 完成的事項可以標記已完成。
 
-## Use
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+<!-- ## Use -->
 
 ## Skill
 
 <p align="center">
-<img align="left" src="https://img.shields.io/badge/-Php-777BB4?logo=php&logoColor=white&logoWidith=200&style=for-the-badge"/>
-<img align="left" src="https://img.shields.io/badge/-JavaScript-F7DF1E?logo=javascript&logoColor=black&style=for-the-badge"/>
-<img align="left" src="https://img.shields.io/badge/-HTML5-E34F26?logo=html5&logoColor=white&style=for-the-badge"/>
-<img align="left" src="https://img.shields.io/badge/-CSS3-3776AB?logo=css3&logoColor=white&style=for-the-badge"/>
+<img align="left" src="https://img.shields.io/badge/-Laravel-E34F26?logo=Laravel&logoColor=white&style=for-the-badge"/>
+<img align="left" src="https://img.shields.io/badge/-MySQL-3776AB?logo=mysql&logoColor=white&style=for-the-badge"/>
+<img align="left" src="https://img.shields.io/badge/-TailwindCSS-06B6D4?logo=TailwindCSS&logoColor=white&style=for-the-badge"/>
+<img align="left" src="https://img.shields.io/badge/-Docker-3776AB?logo=docker&logoColor=white&style=for-the-badge"/>
 </p>
 <br>
 
 ## Version
+
+| 版本 |  | 
+|---------|---------|
+|  PHP | 8.1 |
+| Laravel | 10.10 |
 
 
 
